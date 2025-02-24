@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="flex flex-col items-center justify-center h-screen">
+      <form
+        action=""
+        class="space-y-2 md:space-y-0"
+        onsubmit="redirectToProfile(event)"
+      >
+        <h1 class="text-center text-2xl md:text-4xl font-medium">
+          Search Devs
+        </h1>
+        <div
+          class="flex flex-col justify-center items-center gap-2 md:flex-row md:gap-0"
+        >
+          <input
+            type="text"
+            id="username"
+            placeholder="Type the username here..."
+            class="border-[1.7px] rounded-md px-2 py-1 w-[300px] placeholder-gray-light md: md:px-5 md:py-2"
+          />
+          <button
+            type="submit"
+            class="text-white bg-gray px-6 py-2 rounded-md flex items-center justify-center gap-1 max-w-[100px] md:px-2 md:py-2"
+          >
+            <img src="assets/lupa.svg" alt="" class="size-5 text-white" />
+            Buscar
+          </button>
+        </div>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
