@@ -1,22 +1,34 @@
 const GITHUB_TOKEN = "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";
 
-async function fetchGitHubApi(user) {
-  const res = await fetch(`https://api.github.com/users/${user}/repos`, {
-    headers: {
-      Authorization: `token ${GITHUB_TOKEN}`,
-    },
-  });
-  const data = await res.json();
-  return data;
+async function fetchGitHubUser(user) {
+  try {
+    const res = await fetch(`https://api.github.com/users/${user}`, {
+      per_page: 100,
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+    });
+    if (!res.ok) {
+      return false;
+    }
+    return await res.json();
+  } catch (err) {
+    console.log("Erro ao buscar usuário", err);
+  }
 }
 
-async function fetchGitHubUser(user) {
-  const res = await fetch(`https://api.github.com/users/${user}`, {
-    headers: {
-      Authorization: `token ${GITHUB_TOKEN}`,
-    },
-  });
-  return await res.json();
+async function fetchGitHubApi(user) {
+  try {
+    const res = await fetch(`https://api.github.com/users/${user}/repos`, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log("Erro ao buscar repositórios", err);
+  }
 }
 
 async function getUser() {
@@ -36,6 +48,8 @@ async function getRepos() {
     return result;
   }
 }
+
+
 
 export const result = await getUser();
 export const repos = await getRepos();

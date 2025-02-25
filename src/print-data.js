@@ -1,6 +1,7 @@
 import { result, repos } from "./api.js";
 import { divProfile } from "./components/div-profile.js";
 import { divRepo } from "./components/div-repos.js";
+import { notExistUser } from "./error.js";
 
 const html = document.querySelector("html");
 const body = document.querySelector("body");
@@ -9,6 +10,14 @@ main.className =
   "flex flex-col items-center justify-center w-full h-full md:flex-row";
 
 export async function printData() {
+  if (!result) {
+    const erro = notExistUser();
+    main.appendChild(erro);
+    body.prepend(main);
+    html.appendChild(body);
+    return;
+  }
+
   const divProf = divProfile();
   main.appendChild(divProf);
 
