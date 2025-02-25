@@ -1,6 +1,6 @@
 import { result } from "../api.js";
 
-export function divProfile() {
+export function divProfile(star) {
   const div = document.createElement("div");
   div.className =
     "bg-gray-500 text-white w-full flex flex-col items-start justify-center gap-5 px-5 py-10 md:h-screen md:w-[470px] md:justify-center";
@@ -14,7 +14,7 @@ export function divProfile() {
   const nameContainer = document.createElement("div");
   const fullName = document.createElement("h2");
   fullName.className = "text-2xl font-semibold";
-  fullName.textContent = `${result.name}`;
+  fullName.textContent = result.name ? `${result.name}` : "Sem nome";
   const username = document.createElement("h3");
   username.textContent = `@${result.login}`;
   nameContainer.appendChild(fullName);
@@ -39,7 +39,7 @@ export function divProfile() {
   following.innerHTML = `<img src="assets/heart.svg" alt="" />${result.following} following`;
   const stars = document.createElement("span");
   stars.className = "flex gap-1";
-  stars.innerHTML = `<img src="assets/star.svg" alt="" />0 stars`;
+  stars.innerHTML = `<img src="assets/star.svg" alt="" />${star} stars`;
   statsContainer.appendChild(followers);
   statsContainer.appendChild(following);
   statsContainer.appendChild(stars);
@@ -92,63 +92,9 @@ export function divProfile() {
   const backButton = document.createElement("a");
   backButton.href = "index.html";
   backButton.className =
-    "self-center bg-white text-black px-12 py-2 rounded-md mt-5";
+    "self-center bg-white text-black px-12 py-2 rounded-md mt-5 hover:bg-gray-200";
   backButton.textContent = "Voltar";
   div.appendChild(backButton);
 
   return div;
 }
-
-/* <div class="bg-gray-500 text-white w-full flex flex-col items-start justify-center gap-5 px-5 py-10 md:h-screen md:w-[470px] md:justify-center">
-  <div class="bg-black w-[150px] h-[150px] self-center"></div>
-  <div>
-    <h2 class="text-2xl font-semibold">Developer's full name</h2>
-    <h3>@username</h3>
-  </div>
-  <div class="w-full">
-    <p class="break-words text-gray-light">
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    </p>
-  </div>
-  <div class="flex gap-4">
-    <span class="flex gap-1">
-      <img src="assets/followers.svg" alt="" />
-      200 followers
-    </span>
-    <span class="flex gap-1">
-      <img src="assets/heart.svg" alt="" />
-      130 following
-    </span>
-    <span class="flex gap-1">
-      <img src="assets/star.svg" alt="" />
-      100 stars
-    </span>
-  </div>
-  <div class="flex flex-col gap-2 items-start">
-    <span class="flex gap-2">
-      <img src="assets/corporate.svg" alt="" /> organization
-    </span>
-    <span class="flex gap-2">
-      <img src="assets/location.svg" alt="" />
-      location
-    </span>
-    <span class="flex gap-2">
-      <img src="assets/email.svg" alt="" />
-      email
-    </span>
-    <span class="flex gap-2">
-      <img src="assets/link.svg" alt="" />
-      www.mywebsite.com
-    </span>
-    <span class="flex gap-2">
-      <img src="assets/twitter.png" alt="" class="size-6" />
-      @myTwitter
-    </span>
-  </div>
-  <a
-    href="index.html"
-    class="self-center bg-white text-black px-12 py-2 rounded-md mt-5"
-  >
-    Voltar
-  </a>
-</div>; */

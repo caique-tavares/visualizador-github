@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 @theme {
+  /* colors */
+  
   --color-gray: #47525e;
   --color-gray-light: #b0b1b3;
   --color-gray-500: #3b4252;
   --color-gray-bg: #d9d9d9;
+  
+  /* font */
+
   --font-sans: "Montserrat", sans-serif;
 }

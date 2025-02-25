@@ -5,7 +5,7 @@ export function divRepo(repo) {
   a.href = repo.html_url;
   const repoContainer = document.createElement("div");
   repoContainer.className =
-    "flex flex-col gap-4 w-full items-start justify-start py-2 px-4 border-b-1 border-gray md:px-5 lg:px-10";
+    "bg-gray-200 flex flex-col gap-4 w-full items-start justify-start py-2 px-4 border-b-1 border-gray-100 rounded-xl md:px-5 lg:px-10 md:hover:bg-black";
 
   const repoDetails = document.createElement("div");
   repoDetails.className = "w-full space-y-1";
