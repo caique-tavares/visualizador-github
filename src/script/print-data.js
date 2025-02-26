@@ -57,11 +57,6 @@ async function printData() {
     const newRepos = await getRepos(nextPage);
     console.log(newRepos);
 
-    newRepos.forEach((repo) => {
-      const repoDiv = divRepo(repo);
-      containerRepos.insertBefore(repoDiv, buttonMore);
-    });
-
     if (newRepos.length == 0) {
       buttonMore.setAttribute("disabled", true);
       buttonMore.classList.add("text-gray-light");
@@ -69,7 +64,12 @@ async function printData() {
       buttonMore.classList.add("cursor-not-allowed");
       return;
     }
-    
+
+    newRepos.forEach((repo) => {
+      const repoDiv = divRepo(repo);
+      containerRepos.insertBefore(repoDiv, buttonMore);
+    });
+
     repos.push(...newRepos);
   });
 
