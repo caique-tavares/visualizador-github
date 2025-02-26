@@ -3,8 +3,6 @@ import { divProfile } from "../dev-profile/div-profile.js";
 import { divRepo } from "../dev-profile/div-repos.js";
 import { notExistUser } from "../dev-profile/error.js";
 
-console.log("O script foi carregado!");
-
 const loadingDiv = document.querySelector("#loading");
 loadingDiv.style.display = "none";
 
@@ -47,7 +45,7 @@ async function printData() {
   buttonMore.addEventListener("click", async () => {
     const nextPage =
       Number.isInteger(repos.length / 30) && repos.length / 30 + 1;
-
+    //pagina atual = proxima pagina desativa o botao
     if (!nextPage) {
       buttonMore.setAttribute("disabled", true);
       buttonMore.classList.add("text-gray-light");
@@ -64,6 +62,14 @@ async function printData() {
       containerRepos.insertBefore(repoDiv, buttonMore);
     });
 
+    if (newRepos.length == 0) {
+      buttonMore.setAttribute("disabled", true);
+      buttonMore.classList.add("text-gray-light");
+      buttonMore.classList.remove("cursor-pointer");
+      buttonMore.classList.add("cursor-not-allowed");
+      return;
+    }
+    
     repos.push(...newRepos);
   });
 
@@ -71,8 +77,5 @@ async function printData() {
   main.appendChild(containerRepos);
   body.prepend(main);
   html.appendChild(body);
-
-  console.log(result);
-  console.log(repos);
 }
 printData();

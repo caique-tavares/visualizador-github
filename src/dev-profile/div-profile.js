@@ -4,12 +4,7 @@ export function divProfile(star) {
   const div = document.createElement("div");
   div.className =
     "bg-gray-500 text-white w-full flex flex-col items-start justify-center gap-5 px-5 py-8 md:h-screen md:overflow-hidden md:w-[470px] md:justify-center md:py-0";
-
-  // const profileImage = document.createElement("div");
-  // profileImage.className = "w-[200px] h-[200px] self-center rounded-full";
-  // profileImage.style.backgroundImage = `url(${result.avatar_url})`;
-  // profileImage.style.backgroundSize = "cover";
-  // profileImage.style.backgroundPosition = "center";
+    
   const profileImage = document.createElement("img");
   profileImage.src = result.avatar_url;
   profileImage.alt = "Profile Picture";
