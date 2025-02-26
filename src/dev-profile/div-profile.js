@@ -3,13 +3,13 @@ import { result } from "../script/api.js";
 export function divProfile(star) {
   const div = document.createElement("div");
   div.className =
-    "bg-gray-500 text-white w-full flex flex-col items-start justify-center gap-5 px-5 py-8 md:h-screen md:overflow-hidden md:w-[470px] md:justify-center md:py-0";
-    
+    "bg-gray-500 text-white w-full md:max-w-[350px] flex flex-col items-start justify-center gap-5 px-5 py-8 md:h-screen md:overflow-auto md:justify-center md:pt-40 lg:overflow-hidden lg:pt-10";
+
   const profileImage = document.createElement("img");
   profileImage.src = result.avatar_url;
   profileImage.alt = "Profile Picture";
   profileImage.className =
-    "w-[180px] h-[180px] self-center rounded-full object-cover mt-10";
+    "w-[180px] h-[180px] self-center rounded-full object-cover mt-10 md:m-0";
   div.appendChild(profileImage);
 
   const nameContainer = document.createElement("div");
@@ -105,7 +105,7 @@ export function divProfile(star) {
   const backButton = document.createElement("a");
   backButton.href = "index.html";
   backButton.className =
-    "self-center bg-white text-black px-12 py-2 rounded-md mt-5 hover:bg-gray-200 mb-10";
+    "self-center bg-white text-black px-12 py-2 rounded-md mt-5 hover:bg-gray-200 mb-10 md:m-0";
   backButton.textContent = "Voltar";
   div.appendChild(backButton);
 
