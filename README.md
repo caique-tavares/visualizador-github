@@ -3,7 +3,7 @@
 <img src="./src/assets/print1.png"   alt="Exemplo imagem">
 <img src="./src/assets/print2.png"   alt="Exemplo imagem">
 
-> Um visualizador de perfis do github, nele é possivel digitar um nome de usuário do GitHub, e ao clicao no botão "Buscar", será exibido as informações do usuário e seus repositórios públicos
+> Um visualizador de perfis do github, nele é possivel digitar um nome de usuário do GitHub, e ao clicar no botão "Buscar", será exibido as informações do usuário e seus repositórios públicos
 
 ## 💻 Pré-requisitos
 
