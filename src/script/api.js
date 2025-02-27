@@ -1,3 +1,7 @@
+const params = new URLSearchParams(window.location.search);
+const GITHUB_TOKEN = params.get("key");
+console.log(GITHUB_TOKEN);
+
 async function fetchGitHubUser(user) {
   try {
     const res = await fetch(`https://api.github.com/users/${user}`, {
