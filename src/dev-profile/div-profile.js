@@ -3,7 +3,7 @@ import { result } from "../script/api.js";
 export function divProfile(star) {
   const div = document.createElement("div");
   div.className =
-    "bg-gray-500 text-white w-full md:max-w-[350px] flex flex-col items-start justify-center gap-5 px-5 py-8 md:h-screen md:overflow-auto md:justify-center md:pt-40 lg:overflow-hidden lg:pt-10";
+    "bg-gray-500 text-white w-full md:w-[470px] flex flex-col items-start justify-center gap-5 px-5 py-8 md:h-screen md:overflow-auto md:justify-center md:pt-40 lg:overflow-hidden lg:pt-10";
 
   const profileImage = document.createElement("img");
   profileImage.src = result.avatar_url;
