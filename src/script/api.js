@@ -1,5 +1,3 @@
-const GITHUB_TOKEN = "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";
-
 async function fetchGitHubUser(user) {
   try {
     const res = await fetch(`https://api.github.com/users/${user}`, {
