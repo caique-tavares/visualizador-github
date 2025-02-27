@@ -28,7 +28,7 @@ async function printData() {
 
   const containerRepos = document.createElement("div");
   containerRepos.className =
-    "bg-gray-100 flex flex-col h-screen py-1 w-full md:overflow-y-auto md:overflow-x-hidden md:flex-1 md:h-screen";
+    "bg-gray-100 flex flex-col h-screen py-1 md:overflow-y-auto md:overflow-x-hidden md:flex-1 md:h-screen";
   repos.forEach((repo) => {
     const repoDiv = divRepo(repo);
     containerRepos.appendChild(repoDiv);
